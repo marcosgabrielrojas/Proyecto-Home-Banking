@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header class="header">
+            <img class="logo" src="logo.png"/>
+            <div class="align-left">
+                <span id="nombre">Bienvenido/a</span>
+                <img class="avatar" src="avatar.svg"/>
+            </div>
+        </header>
+        <main  class="white-container">
+            <nav class="menu-container">
+                <h1 class="tu-cuenta">Tu cuenta</h1>
+                <button class="links" onclick="extraerDinero()">Extraer dinero</button>
+                <button class="links" onclick="depositarDinero()">Depositar dinero</button>
+                <button class="links" onclick="pagarServicio()">Pagar servicios</button>
+                <button class="links" onclick="transferirDinero()">Transferir dinero</button>
+                <button class="links" onclick="cambiarLimiteDeExtraccion()">Cambiar límite de extracción</button>
+            </nav>
+            <section class="green-container">
+                <article class="cuenta-info">
+                    <p>Saldo en tu cuenta</p>
+                    <h3 id="saldo-cuenta">$</h3>
+                    <p id="limite-extraccion">Tu límite de extracción es: </p>
+                </article>
+            </section>
+        </main>
+    </body>
+</html>
