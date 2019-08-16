@@ -11,31 +11,41 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/estilo.css" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+        <script src="js/programa.js"></script>
     </head>
-    <body>  
-        <header class="header">
-            <img class="logo" src="img/logo.png"/>
-            <div class="align-left">
-                <span id="nombre">Bienvenido/a</span>
-                <img class="avatar" src="img/avatar.svg"/>
-            </div>
-        </header>
-        <main  class="white-container">
-            <nav class="menu-container">
-                <h1 class="tu-cuenta">Tu cuenta</h1>
-                <button class="links" onclick="extraerDinero()">Extraer dinero</button>
-                <button class="links" onclick="depositarDinero()">Depositar dinero</button>
-                <button class="links" onclick="pagarServicio()">Pagar servicios</button>
-                <button class="links" onclick="transferirDinero()">Transferir dinero</button>
-                <button class="links" onclick="cambiarLimiteDeExtraccion()">Cambiar límite de extracción</button>
-            </nav>
-            <section class="green-container">
-                <article class="cuenta-info">
-                    <p>Saldo en tu cuenta</p>
-                    <h3 id="saldo-cuenta">$</h3>
-                    <p id="limite-extraccion">Tu límite de extracción es: </p>
-                </article>
-            </section>
-        </main>
+    <body>
+        <div id="cuentaPNL">
+            <header class="header">
+                <img class="logo" src="img/logo.png"/>
+                <div class="align-left">
+                    <span id="nombre">Bienvenido/a</span>
+                    <img class="avatar" src="img/avatar.svg"/>
+                </div>
+            </header>
+            <main  class="white-container">
+                <nav class="menu-container">
+                    <h1 class="tu-cuenta">Tu cuenta</h1>
+                    <button class="links" onclick="extraerDinero()">Extraer dinero</button>
+                    <button class="links" onclick="depositarDinero()">Depositar dinero</button>
+                    <button class="links" onclick="pagarServicio()">Pagar servicios</button>
+                    <button class="links" onclick="transferirDinero()">Transferir dinero</button>
+                    <button class="links" onclick="cambiarLimiteDeExtraccion()">Cambiar límite de extracción</button>
+                </nav>
+                <section class="green-container">
+                    <article class="cuenta-info">
+                        <p>Saldo en tu cuenta</p>
+                        <h3 id="saldo-cuenta">$</h3>
+                        <p id="limite-extraccion">Tu límite de extracción es: </p>
+                    </article>
+                </section>
+            </main>
+        </div>
+        <div id="LoginPNL">
+            <a>Usuario</a>
+            <input type="text">
+            <a>Clave</a>
+            <input type="number">
+            <button onclick="loginBTN">Ingresar</button>
+        </div>
     </body>
 </html>
