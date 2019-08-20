@@ -11,7 +11,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/estilo.css" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-        <script src="js/programa.js"></script>
+
     </head>
     <body>
         <div id="cuentaPNL">
@@ -42,10 +42,12 @@ and open the template in the editor.
         </div>
         <div id="LoginPNL">
             <a>Usuario</a>
-            <input type="text">
+            <input type="text" id="usuario">
             <a>Clave</a>
-            <input type="number">
-            <button onclick="loginBTN">Ingresar</button>
+            <input type="number" id="clave">
+            <button id="loginBTN">Ingresar</button>
         </div>
+        <script src="js/programa.js"></script>
+
     </body>
 </html>
