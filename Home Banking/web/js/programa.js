@@ -19,16 +19,23 @@ class programa {
             document.querySelector("#SMSpass").innerHTML="Contraceña o Usuario INCORRECTO";
         }
     }
+    static salir(){
+        programa.borrar();
+        programa.mostrar();
+    }
     // funcionamiento de los botones 
     static button() {
         console.log("funciona el button");
         document.querySelector("#loginBTN").setAttribute("onclick", "programa.login();"); 
         //document.querySelector("#buttonBRR").setAttribute("onclick","programa.borrar();");
-        document.querySelector("#salir").setAttribute("onclick", "programa.borrar();");
+        document.querySelector("#salir").setAttribute("onclick", "programa.salir();");
     }
-    // para ocultar la cuenta Banck
+    // para ocultar la cuenta Banco
     static borrar() {
         document.querySelector("#cuentaPNL").style.display = "none";
+    }
+    static mostrar(){
+        document.querySelector("#loginBTN").style.display = "block";
     }
 }
 programa.button();
