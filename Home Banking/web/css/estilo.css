@@ -188,3 +188,11 @@ body {
         margin-bottom: 10px;
     }
 }
+#LoginPNL{
+    text-align: center;
+    margin-top: 200px;
+    margin-left: 25%;
+    margin-right: 30%;
+    border-radius: 8px;
+    padding: 25px;
+}

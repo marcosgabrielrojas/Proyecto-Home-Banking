@@ -30,6 +30,7 @@ and open the template in the editor.
                     <button class="links" onclick="pagarServicio()">Pagar servicios</button>
                     <button class="links" onclick="transferirDinero()">Transferir dinero</button>
                     <button class="links" onclick="cambiarLimiteDeExtraccion()">Cambiar límite de extracción</button>
+                    <button class="links" id="salir">SALIR</button>
                 </nav>
                 <section class="green-container">
                     <article class="cuenta-info">
@@ -39,12 +40,14 @@ and open the template in the editor.
                     </article>
                 </section>
             </main>
+            
         </div>
         <div id="LoginPNL">
             <a>Usuario</a>
             <input type="text" id="usuario">
             <a>Clave</a>
-            <input type="number" id="clave">
+            <input type="password" id="clave">
+            <a id="SMSpass"></a>
             <button id="loginBTN">Ingresar</button>
         </div>
         <script src="js/programa.js"></script>
