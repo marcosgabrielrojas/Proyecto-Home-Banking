@@ -22,6 +22,7 @@ class programa {
     static salir(){
         programa.borrar();
         programa.mostrar();
+//         document.querySelector("#loginPNL").style.display = "block";
     }
     // funcionamiento de los botones 
     static button() {
@@ -35,7 +36,7 @@ class programa {
         document.querySelector("#cuentaPNL").style.display = "none";
     }
     static mostrar(){
-        document.querySelector("#loginBTN").style.display = "block";
+        document.querySelector("#LoginPNL").style.display = "block";
     }
 }
 programa.button();
