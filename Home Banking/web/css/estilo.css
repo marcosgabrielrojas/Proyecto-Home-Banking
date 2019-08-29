@@ -2,7 +2,9 @@
     background-color: beige;
     
 }
-
+.ocultarTpl {
+    display: none;
+}
 body {
     margin: 0;
 

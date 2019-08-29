@@ -25,19 +25,18 @@ and open the template in the editor.
             <main  class="white-container">
                 <nav class="menu-container">
                     <h1 class="tu-cuenta">Tu cuenta</h1>
-                    <button class="links" onclick="extraerDinero()">Extraer dinero</button>
+                    <button class="links" id="consultarCuenta">Consular Cuenta</button>
+                    <button class="links" id="estraer">Extraer dinero</button>
                     <button class="links" onclick="depositarDinero()">Depositar dinero</button>
-                    <button class="links" onclick="pagarServicio()">Pagar servicios</button>
-                    <button class="links" onclick="transferirDinero()">Transferir dinero</button>
                     <button class="links" onclick="cambiarLimiteDeExtraccion()">Cambiar límite de extracción</button>
                     <button class="links" id="salir">SALIR</button>
                 </nav>
-                <section class="green-container">
-                    <article class="cuenta-info">
+                <section class="green-container" id="masterTpl">
+                   <!-- <article class="cuenta-info">
                         <p>Saldo en tu cuenta</p>
                         <h3 id="saldo-cuenta">$</h3>
                         <p id="limite-extraccion">Tu límite de extracción es: </p>
-                    </article>
+                    </article>-->
                 </section>
             </main>
             
@@ -50,7 +49,22 @@ and open the template in the editor.
             <a id="SMSpass"></a>
             <button id="loginBTN">Ingresar</button>
         </div>
+        
+        <!-- Zona de paneles paso 2 -->
+        <article id="consultarTpl" class="ocultarTpl">
+            <h2>Estraer Dinero</h2>
+            <input type="number" id="consularInput" min="1">
+            <button id="consultarBTN">Aceptar</button>
+            <div id="limite-extraccion"></div>
+        </article>
+        
+        <article id="extraerTpl" class="ocultarTpl">
+            <h2>Estraer Dinero</h2>
+            <input type="number" id="extraerInput" min="1">
+            <button id="estraerBTN">Aceptar</button>
+            <div id="pmlMensajeEstraer"></div>
+        </article>
+        
         <script src="js/programa.js"></script>
-
     </body>
 </html>

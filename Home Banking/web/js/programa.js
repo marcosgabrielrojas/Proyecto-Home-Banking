@@ -1,13 +1,6 @@
 class programa {
     //            <-------------Fase de estado de cuenta, extraccion, deposito y pago de Cuentas---------> 
-    static consultarCuenta(){
-        console.log("funciona consultarCuentas()");
-        // con este metodo se busca y se meten los datos de la cuenta
-        //      ****no funviona el paso de informacion LocalStorage
-        let misDatos =JSON.parse(localStorage.getItem("baseDeDatos"));
-        document.querySelector("#nombreUser").innerHTML=misDatos.nombre;
-        document.querySelector("#nombreUser").innerHTML= misDatos.constructor
-    }
+    
     //                          compraracion de usuario
     static login() {
     // Se busca los datos del usuario y se lo guarda en una variable
@@ -23,7 +16,7 @@ class programa {
             document.querySelector("#LoginPNL").style.display="none";
             document.querySelector("#cuentaPNL").style.display="block";
             document.querySelector("#SMSpass").innerHTML="";
-            programa.consultarCuenta();
+            
         } else {
             console.log("no eres usuario del banco");
             document.querySelector("#SMSpass").innerHTML="Contraceña o Usuario INCORRECTO";
@@ -37,10 +30,11 @@ class programa {
     }
     //                          funcionamiento de los botones 
     static button() {
-        console.log("funciona el button");
+        
         document.querySelector("#loginBTN").setAttribute("onclick", "programa.login();"); 
         //document.querySelector("#buttonBRR").setAttribute("onclick","programa.borrar();");
         document.querySelector("#salir").setAttribute("onclick", "programa.salir();");
+        document.querySelector("#consultarCuenta").setAttribute("onclick","Cuenta.consultarTpl();");
     }
     // para ocultar o mostrar la cuenta Banco
     static borrar() {
@@ -65,6 +59,13 @@ class baseDeDatos {
         //usamops el localStorage como base de dato 
         localStorage.setItem("baseDeDatos",JSON.stringify(cuenta));
         return cuenta;
+    }
+}
+class Cuenta{
+    static consultarTpl(){
+        console.log("funcionaCuenta y consultarTpl()");
+        document.querySelector("#masterTpl").innerHTML =  document.querySelector("#consultarTpl")
+        document.querySelector("")
     }
 }
 
