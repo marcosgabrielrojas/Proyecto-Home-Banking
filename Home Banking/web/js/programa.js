@@ -1,26 +1,12 @@
 class programa {
-    //                          Base de Datos EN JS.
-    static baseDeDatos() {
-        //base de dato que simula venir del SERVER
-        let cuenta = {
-            nombre : "Marcos Rojas",
-            user : "marcos",
-            pass : "123",
-            saldo : 5000,
-            limite : 2000,
-        };
-        
-        //usamops el localStorage como base de dato 
-        localStorage.setItem("baseDeDatos",JSON.stringify(cuenta));
-        return cuenta;
-    }
     //            <-------------Fase de estado de cuenta, extraccion, deposito y pago de Cuentas---------> 
     static consultarCuenta(){
         console.log("funciona consultarCuentas()");
         // con este metodo se busca y se meten los datos de la cuenta
-        
+        //      ****no funviona el paso de informacion LocalStorage
         let misDatos =JSON.parse(localStorage.getItem("baseDeDatos"));
-        document.querySelector()("#bombreUser").innerHTML=misDatos.nombre;
+        document.querySelector("#nombreUser").innerHTML=misDatos.nombre;
+        document.querySelector("#nombreUser").innerHTML= misDatos.constructor
     }
     //                          compraracion de usuario
     static login() {
@@ -64,5 +50,23 @@ class programa {
         document.querySelector("#LoginPNL").style.display = "block";
     }
 }
+class baseDeDatos {
+    //                          Base de Datos EN JS.
+    static datos() {
+        //base de dato que simula venir del SERVER
+        let cuenta = {
+            nombre : "MarcosRojas",
+            user : "marcos",
+            pass : "123",
+            saldo : 5000,
+            limite : 2000
+        };
+        
+        //usamops el localStorage como base de dato 
+        localStorage.setItem("baseDeDatos",JSON.stringify(cuenta));
+        return cuenta;
+    }
+}
+
 programa.button();
 programa.borrar();
