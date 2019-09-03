@@ -8,10 +8,13 @@ class programa {
         let usuario = document.querySelector("#usuario").value;
         let clave = document.querySelector("#clave").value;
         // usuario Registrado Trucho
+        /*
         let usuarioValido = "marcos";
         let claveValida = "123";
+        */
+       let datosCuenta= baseDeDatos.datos();
         // Comparacion y validacion de los usuario
-        if (usuarioValido === usuario && claveValida === clave) {
+        if (datosCuenta.user === usuario && datosCuenta.pass === clave) {
             console.log("el usuario entro");
             document.querySelector("#LoginPNL").style.display = "none";
             document.querySelector("#cuentaPNL").style.display = "block";
@@ -68,7 +71,7 @@ class Cuenta {
         console.log("funcionaCuenta y consultarTpl()");
         document.querySelector("#masterTpl").innerHTML = document.querySelector("#consultarTpl").innerHTML;
         // document.querySelector("#consultarTpl").style.display = "block";
-        let  misDatos = JSON.parse(localStorage.getItem("miBaseDeDatos"));
+        let  misDatos = JSON.parse(localStorage.getItem("miBaseDeDatos")); // que hace en Realidad Duda Profe
         document.querySelector("#nombreUser").innerHtml = misDatos.nombre;
         document.querySelector("#saldo").innerHtml = "$" + misDatos.saldo;
     }
