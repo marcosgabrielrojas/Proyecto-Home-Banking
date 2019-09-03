@@ -35,6 +35,7 @@ class programa {
         //document.querySelector("#buttonBRR").setAttribute("onclick","programa.borrar();");
         document.querySelector("#salir").setAttribute("onclick", "programa.salir();");
         document.querySelector("#consultarCuenta").setAttribute("onclick", "Cuenta.consultarTpl();");
+        document.querySelector("#prueba").setAttribute("onclick","baseDeDatos,datos();");
     }
     // para ocultar o mostrar la cuenta Banco
     static borrar() {
@@ -48,7 +49,7 @@ class baseDeDatos {
     //                          Base de Datos EN JS.
     static datos() {
         //base de dato que simula venir del SERVER
-        let cuenta = {
+        let cuentas = {
             nombre: "MarcosRojas",
             user: "marcos",
             pass: "123",
@@ -57,8 +58,9 @@ class baseDeDatos {
         };
 
         //usamops el localStorage como base de dato 
-        localStorage.setItem("baseDeDatos", JSON.stringify(cuenta));
-        return cuenta;
+        localStorage.setItem("miBaseDeDatos", JSON.stringify(cuentas));
+        return cuentas;
+        console.log();
     }
 }
 class Cuenta {
@@ -67,6 +69,7 @@ class Cuenta {
         document.querySelector("#masterTpl").innerHTML = document.querySelector("#consultarTpl").innerHTML;
         // document.querySelector("#consultarTpl").style.display = "block";
         let  misDatos = JSON.parse(localStorage.getItem("miBaseDeDatos"));
+        document.querySelector("#nombreUser").innerHtml = misDatos.nombre;
         document.querySelector("#saldo").innerHtml = "$" + misDatos.saldo;
     }
 }
