@@ -28,11 +28,10 @@ and open the template in the editor.
                 <nav class="menu-container">
                     <h1 class="tu-cuenta">Tu cuenta</h1>
                     <button class="links" id="consultarCuenta">Consular Cuenta</button>
-                    <button class="links" id="estraer">Extraer dinero</button>
-                    <button class="links" onclick="depositarDinero()">Depositar dinero</button>
+                    <button class="links" id="extraer">Extraer dinero</button>
+                    <button class="links" id="depositar">Depositar dinero</button>
                     <button class="links" onclick="cambiarLimiteDeExtraccion()">Cambiar límite de extracción</button>
                     <button class="links" id="salir">SALIR</button>
-                    <button class="links" id="prueba">Prueba</button>
                 </nav>
                 <section class="green-container" id="masterTpl">
                    <!-- <article class="cuenta-info">
@@ -56,9 +55,9 @@ and open the template in the editor.
         <!-- Zona de paneles paso 2 -->
         <article id="consultarTpl" class="ocultarTpl">
             <h1>Consultar Dinero     </h1>
-            <h2 id="saldo"> </h2>
-
-            <div id="limite-extraccion"></div>
+            <h2> Saldo Actual: <span id="saldo"> </span> </h2>
+           
+            <h2> Limite De Extraccion<h2 id="limite-extraccion"></h2></h2>
         </article>
         
         <article id="extraerTpl" class="ocultarTpl">
@@ -68,6 +67,12 @@ and open the template in the editor.
             <div id="pmlMensajeEstraer"></div>
         </article>
         
+        <article id="depositarTpl" class="ocultarTpl">
+            <h2>Depositar Dinero</h2>
+            <input type="number" id="depositarInput" min="1">
+            <button id="depositarBTN">Aceptar</button>
+            <div id="pmlMensajeDepositar"></div>
+        </article>
         <script src="js/programa.js"></script>
     </body>
 </html>

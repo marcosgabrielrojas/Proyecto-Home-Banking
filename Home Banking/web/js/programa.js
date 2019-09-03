@@ -37,8 +37,9 @@ class programa {
         document.querySelector("#loginBTN").setAttribute("onclick", "programa.login();");
         //document.querySelector("#buttonBRR").setAttribute("onclick","programa.borrar();");
         document.querySelector("#salir").setAttribute("onclick", "programa.salir();");
-        document.querySelector("#consultarCuenta").setAttribute("onclick", "Cuenta.consultarTpl();");
-        document.querySelector("#prueba").setAttribute("onclick","baseDeDatos,datos();");
+        document.querySelector("#consultarCuenta").setAttribute("onclick", "cuenta.consultarTpl();");
+        document.querySelector("#extraer").setAttribute("onclick","cuenta.extraerTpl()");
+        document.querySelector("#depositar").setAttribute("onclick","cuenta.depositarTpl();");
     }
     // para ocultar o mostrar la cuenta Banco
     static borrar() {
@@ -62,19 +63,29 @@ class baseDeDatos {
 
         //usamops el localStorage como base de dato 
         localStorage.setItem("miBaseDeDatos", JSON.stringify(cuentas));
-        return cuentas;
-        console.log();
+        return cuentas;    
     }
 }
-class Cuenta {
+class cuenta {
     static consultarTpl() {
         console.log("funcionaCuenta y consultarTpl()");
         document.querySelector("#masterTpl").innerHTML = document.querySelector("#consultarTpl").innerHTML;
         // document.querySelector("#consultarTpl").style.display = "block";
         let  misDatos = JSON.parse(localStorage.getItem("miBaseDeDatos")); // que hace en Realidad Duda Profe
-        document.querySelector("#nombreUser").innerHtml = misDatos.nombre;
-        document.querySelector("#saldo").innerHtml = "$" + misDatos.saldo;
+        
+        document.querySelector("#nombreUser").innerHTML = misDatos.nombre;
+        document.querySelector("#saldo").innerHTML = "$" + misDatos.saldo;
+        document.querySelector("#limite-extraccion").innerHTML = "$" + misDatos.limite;
     }
+    static extraerTpl(){
+        document.querySelector("#masterTpl").innerHTML= document.querySelector("#extraerTpl").innerHTML;
+    
+    }
+    static depositarTpl(){
+        console.log("hola Depocito");
+        document.querySelector("#masterTpl").innerHTML = document.querySelector("#depositarTpl").innerHTML;
+    } 
+    
 }
 
 programa.button();
