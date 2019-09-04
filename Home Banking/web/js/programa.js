@@ -79,7 +79,19 @@ class cuenta {
     }
     static extraerTpl(){
         document.querySelector("#masterTpl").innerHTML= document.querySelector("#extraerTpl").innerHTML;
-    
+        
+        /*if (document.querySelector("#extraerInput").value <=0) {
+            document,querySelector("#pnlMensajeEstraer").innerHTML ="No se puede hacer la extraccion tiene que ser Mayor a 0.";
+        } else {
+            console.log("")
+            let misDatos = JSON.parse(localStorage.getItem("#miBaseDeDatos"));
+            
+            if (document.querySelector("#extraerInput").value >= misDatos.limite) {
+                
+            } else {
+            }*/
+        }
+     static extraerCalculo
     }
     static depositarTpl(){
         console.log("hola Depocito");

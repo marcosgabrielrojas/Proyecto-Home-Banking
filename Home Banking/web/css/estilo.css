@@ -156,7 +156,7 @@ body {
 #limite-extraccion {
     overflow: hidden;
 
-    font-size: 15px;
+    font-size: 20px;
 
     text-overflow: ellipsis;
 }
