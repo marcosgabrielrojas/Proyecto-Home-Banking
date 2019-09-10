@@ -9,10 +9,10 @@ class programa {
         let clave = document.querySelector("#clave").value;
         // usuario Registrado Trucho
         /*
-        let usuarioValido = "marcos";
-        let claveValida = "123";
-        */
-       let datosCuenta= baseDeDatos.datos();
+         let usuarioValido = "marcos";
+         let claveValida = "123";
+         */
+        let datosCuenta = baseDeDatos.datos();
         // Comparacion y validacion de los usuario
         if (datosCuenta.user === usuario && datosCuenta.pass === clave) {
             console.log("el usuario entro");
@@ -38,8 +38,9 @@ class programa {
         //document.querySelector("#buttonBRR").setAttribute("onclick","programa.borrar();");
         document.querySelector("#salir").setAttribute("onclick", "programa.salir();");
         document.querySelector("#consultarCuenta").setAttribute("onclick", "cuenta.consultarTpl();");
-        document.querySelector("#extraer").setAttribute("onclick","cuenta.extraerTpl()");
-        document.querySelector("#depositar").setAttribute("onclick","cuenta.depositarTpl();");
+        document.querySelector("#extraer").setAttribute("onclick", "cuenta.extraerTpl()");
+        document.querySelector("#extraerBTN").setAttribute("onclick","cuenta.extraerCalculo();");
+        document.querySelector("#depositar").setAttribute("onclick", "cuenta.depositarTpl();");
     }
     // para ocultar o mostrar la cuenta Banco
     static borrar() {
@@ -63,7 +64,7 @@ class baseDeDatos {
 
         //usamops el localStorage como base de dato 
         localStorage.setItem("miBaseDeDatos", JSON.stringify(cuentas));
-        return cuentas;    
+        return cuentas;
     }
 }
 class cuenta {
@@ -72,32 +73,35 @@ class cuenta {
         document.querySelector("#masterTpl").innerHTML = document.querySelector("#consultarTpl").innerHTML;
         // document.querySelector("#consultarTpl").style.display = "block";
         let  misDatos = JSON.parse(localStorage.getItem("miBaseDeDatos")); // que hace en Realidad Duda Profe
-        
+
         document.querySelector("#nombreUser").innerHTML = misDatos.nombre;
         document.querySelector("#saldo").innerHTML = "$" + misDatos.saldo;
         document.querySelector("#limite-extraccion").innerHTML = "$" + misDatos.limite;
     }
-    static extraerTpl(){
-        document.querySelector("#masterTpl").innerHTML= document.querySelector("#extraerTpl").innerHTML;
+    static extraerTpl() {
+        document.querySelector("#masterTpl").innerHTML = document.querySelector("#extraerTpl").innerHTML;
+
         
-        /*if (document.querySelector("#extraerInput").value <=0) {
-            document,querySelector("#pnlMensajeEstraer").innerHTML ="No se puede hacer la extraccion tiene que ser Mayor a 0.";
-        } else {
-            console.log("")
-            let misDatos = JSON.parse(localStorage.getItem("#miBaseDeDatos"));
-            
-            if (document.querySelector("#extraerInput").value >= misDatos.limite) {
-                
-            } else {
-            }*/
-        }
-     static extraerCalculo
     }
-    static depositarTpl(){
+    static extraerCalculo() {
+        console.log("Funciona boton Extraer Calculo");
+        if (document.querySelector("#extraerInput").value <= 0) {
+            document.querySelector("#pnlMensajeEstraer").innerHTML = "No se puede hacer la extraccion tiene que ser Mayor a 0.";
+        } else {
+            console.log("Else");
+            let misDatos = JSON.parse(localStorage.getItem("#miBaseDeDatos"));
+
+            if (document.querySelector("#extraerInput").value >= misDatos.limite) {
+
+            } else {
+            }
+        }
+    }
+
+    static depositarTpl() {
         console.log("hola Depocito");
         document.querySelector("#masterTpl").innerHTML = document.querySelector("#depositarTpl").innerHTML;
-    } 
-    
+    }
 }
 
 programa.button();
