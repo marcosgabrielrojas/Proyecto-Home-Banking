@@ -72,7 +72,7 @@ class baseDeDatos {
 class cuenta {
     static consultarTpl() {
         console.log("funcionaCuenta y consultarTpl()");
-        document.querySelector("#masterTpl").innerHTML = document.querySelector("#consultarTpl").innerHTML;
+        document.querySelector("#masterTpl").innerHTML = document.querySelector("#mconsultarTpl").innerHTML;
         // document.querySelector("#consultarTpl").style.display = "block";
         let  misDatos = JSON.parse(localStorage.getItem("miBaseDeDatos")); // que hace en Realidad Duda Profe
 
@@ -90,7 +90,7 @@ class cuenta {
         if (document.querySelector("#extraerInput").value <= 0) {
             document.querySelector("#pnlMensajeExtraer").innerHTML = "No se puede hacer la extraccion tiene que ser Mayor a 0.";
         } else {
-            let misDatos = JSON.parse(localStorage.getItem("#miBaseDeDatos"));
+            let misDatos = JSON.parse(localStorage.getItem("miBaseDeDatos"));
             if (document.querySelector("#extraerInput").value >= misDatos.limite){
                 document.querySelector("#pnlMensajeExtraer").innerHTML ="NO se Puede hacer la Extaccion ingrese un numero menor.";
             } else {
