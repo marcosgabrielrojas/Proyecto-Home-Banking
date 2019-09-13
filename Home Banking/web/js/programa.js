@@ -58,8 +58,10 @@ class baseDeDatos {
             nombre: "MarcosRojas",
             user: "marcos",
             pass: "123",
+            limite: 2000,
             saldo: 5000,
-            limite: 2000
+            otro:100
+            
         };
 
         //usamops el localStorage como base de dato 
@@ -89,10 +91,15 @@ class cuenta {
             document.querySelector("#pnlMensajeExtraer").innerHTML = "No se puede hacer la extraccion tiene que ser Mayor a 0.";
         } else {
             let misDatos = JSON.parse(localStorage.getItem("#miBaseDeDatos"));
-            if (document.querySelector("#extraerInput").value >= misDatos.limite) {
+            if (document.querySelector("#extraerInput").value >= misDatos.limite){
                 document.querySelector("#pnlMensajeExtraer").innerHTML ="NO se Puede hacer la Extaccion ingrese un numero menor.";
             } else {
-                
+                console.log("face de calculo+ Cuenta");
+                console.log("Saldo antes de el calculo "+ misDatos.saldo);
+                misDatos.saldo = misDatos.saldo - document.querySelector("#extraerInput").value;
+                localStorage.setItem("miBaseDeDatos",JSON.stringify(misDatos));
+                console.log("Saldo Despues de la Extraccion");
+                document.querySelector("#pnlMensajeExtraer").innerHTML = "Extraccion Realizado por $"+document.querySelector("#extraerInput").value;
             }
         }
     }
