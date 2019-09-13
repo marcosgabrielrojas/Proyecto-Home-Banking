@@ -86,14 +86,13 @@ class cuenta {
     static extraerCalculo() {
         console.log("Funciona boton Extraer Calculo");
         if (document.querySelector("#extraerInput").value <= 0) {
-            document.querySelector("#pnlMensajeEstraer").innerHTML = "No se puede hacer la extraccion tiene que ser Mayor a 0.";
+            document.querySelector("#pnlMensajeExtraer").innerHTML = "No se puede hacer la extraccion tiene que ser Mayor a 0.";
         } else {
-            console.log("Else");
             let misDatos = JSON.parse(localStorage.getItem("#miBaseDeDatos"));
-
             if (document.querySelector("#extraerInput").value >= misDatos.limite) {
-
+                document.querySelector("#pnlMensajeExtraer").innerHTML ="NO se Puede hacer la Extaccion ingrese un numero menor.";
             } else {
+                
             }
         }
     }
